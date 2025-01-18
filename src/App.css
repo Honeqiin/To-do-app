@@ -1,0 +1,181 @@
+body{
+  background-color: #17181f;
+  color: #ddd;
+}
+*{
+  box-sizing: border-box;
+}
+main{
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+.app-header {
+  background-color: #0f1018;
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.app-main {
+  flex: 1; 
+  padding: 16px;
+  overflow-y: auto; 
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.app-footer {
+  background-color: #0f1018;
+  color: white;
+  text-align: center;
+  padding: 4px 0;
+  font-size: 12px;
+}
+
+
+form{
+  border: 3px solid #30313D;
+  border-radius: 10px;
+  padding: 5px;
+  display:flex;
+}
+form input[type="text"] {
+  background: none;
+  color:#fff;
+  border:0;
+  padding: 0 8px;
+  display:block;
+  width: 100%;
+}
+form button{
+  background-color: #61DAFB;
+  border:0;
+  border-radius: 6px;
+  cursor:pointer;
+}
+
+div.task{
+  background-color: #30313D;
+  border-radius: 10px;
+  padding: 5px 9px;
+  margin-top: 5px;
+  display:flex;
+  align-items: center;
+  transition: opacity .3s linear;
+}
+div.task svg{
+  height: 20px;
+  margin-right: 6px;
+  fill: #61DAFB;
+}
+div.task.done{
+  opacity: 0.3;
+}
+div.task-name, div.task form{
+  flex-grow:1;
+}
+div.task span{
+  position:relative;
+}
+div.task span:before{
+  content:'';
+  display:block;
+  width:0;
+  height:1px;
+  background-color: #ddd;
+  position:absolute;
+  top: 10px;
+  transition: width .1s linear;
+}
+div.task.done span:before{
+  width: 100%;
+}
+
+h1, h2{
+  text-align: center;
+}
+
+div.checkbox{
+  display:flex;
+  align-items: center;
+}
+
+button.trash{
+  background:none;
+  border:none;
+  display:flex;
+  cursor:pointer;
+}
+button.trash svg{
+  fill: #888;
+  height: 14px;
+}
+div.task input{
+  border: 2px solid #555;
+  border-radius:5px;
+  padding: 2px 4px;
+}
+
+.empty-list {
+  text-align: center;
+  font-size: 20px;
+  color: #777; /* Subtelny szary kolor */
+  margin-top: 20px;
+}
+
+.checkbox {
+  width: 24px; /* Ustaw szerokość */
+  height: 24px; /* Ustaw wysokość */
+  border-radius: 4px; /* Lekko zaokrąglone rogi */
+  display: flex;     
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.checkbox.unchecked {
+  background-color: transparent; /* Puste tło dla niezaznaczonego checkboxa */
+}
+
+.checkbox svg {
+  width: 16px; /* Rozmiar SVG */
+  height: 16px;
+  fill: currentColor; /* Kolor SVG dziedziczony z koloru tekstu */
+}
+
+
+.toggle-hide-completed {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.toggle-hide-completed .checkbox {
+  cursor: pointer;
+}
+
+.toggle-hide-completed label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
